@@ -2,6 +2,7 @@ package dev.gether.GetStarted.rest;
 
 import dev.gether.GetStarted.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ public class CoachController {
     private Coach coach;
 
     @Autowired
-    public CoachController(Coach coach)
+    public CoachController(@Qualifier("baseballCoach") Coach coach)
     {
         this.coach = coach;
     }
