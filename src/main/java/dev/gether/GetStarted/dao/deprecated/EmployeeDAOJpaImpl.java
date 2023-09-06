@@ -1,4 +1,4 @@
-package dev.gether.GetStarted.dao;
+package dev.gether.GetStarted.dao.deprecated;
 
 import dev.gether.GetStarted.entity.Employee;
 import jakarta.persistence.EntityManager;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class EmployeeDAOJpaImpl implements EmployeeDAO{
+public class EmployeeDAOJpaImpl implements EmployeeDAO {
 
     private EntityManager entityManager;
 
@@ -20,7 +20,7 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO{
 
     @Override
     public List<Employee> findAll() {
-        TypedQuery<Employee> query = entityManager.createQuery("FROM Employee", Employee.class);
+        TypedQuery<Employee> query = entityManager.createQuery("from Employee", Employee.class);
         return query.getResultList();
     }
 
@@ -40,7 +40,4 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO{
         entityManager.remove(employee);
     }
 
-    public EntityManager getEntityManager() {
-        return entityManager;
-    }
 }

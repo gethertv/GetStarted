@@ -1,4 +1,4 @@
-package dev.gether.GetStarted.dao;
+package dev.gether.GetStarted.dao.deprecated;
 
 
 import dev.gether.GetStarted.entity.Employee;
@@ -12,6 +12,7 @@ public interface EmployeeDAO {
 
     Employee findById(int id);
     Employee save(Employee employee);
+
 
     void delete(int id);
 
